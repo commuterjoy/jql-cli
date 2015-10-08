@@ -39,7 +39,7 @@ jql create --project NFT --important --summary 'Something broke'
 Create a new issues with a description from stdin,
 
 ```
-jql create -p NFT -P 1 --summary 'Uh-oh' < pbpaste 
+jql create -p NFT --s 'Uh-oh' < foo.txt 
 ```
 
 Open an issue (in your web browser),
