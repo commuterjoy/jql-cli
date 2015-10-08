@@ -12,11 +12,22 @@ Configure it,
 jql auth -u <username> -p <password> -h <hostname>
 ```
 
-List some issues by created date or priorty
+List some issues by created date,
 
 ```
 jql ls --project NFT --created
+```
+
+... or priority,
+
+```
 jql ls --project NFT --priority
+```
+
+Ad-hoc [JQL](https://confluence.atlassian.com/jira/advanced-searching-179442050.html) query,
+
+```
+jql ls -q 'resolution = Unresolved AND assignee in (currentUser()) ORDER BY priority DESC'
 ```
 
 Create a new issue,
@@ -34,11 +45,11 @@ jql create -p NFT -P 1 --summary 'Uh-oh' < pbpaste
 Open an issue (in your web browser),
 
 ```
-jql open NFT-123
+jql show NFT-123
 ```
 
-Close an issue,
+## to-do
 
-```
-jql close NFT-123
-```
+- Close an issue, Eg. `jql close NFT-123`
+- Append a comment to an issue, Eg. `jql comment NFT-123 -m "this is a comment"`
+
