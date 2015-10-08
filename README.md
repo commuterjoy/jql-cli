@@ -12,10 +12,11 @@ Configure it,
 jql auth -u <username> -p <password> -h <hostname>
 ```
 
-List some issues by created date,
+List some issues by created date or priorty
 
 ```
 jql ls --project NFT --created
+jql ls --project NFT --priority
 ```
 
 Create a new issue,
@@ -30,7 +31,7 @@ Create a new issues with a description from stdin,
 jql create -p NFT -P 1 --summary 'Uh-oh' < pbpaste 
 ```
 
-Open an issue,
+Open an issue (in your web browser),
 
 ```
 jql open NFT-123
