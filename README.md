@@ -42,6 +42,12 @@ Create a new issues with a description from stdin,
 jql create -p NFT -s 'Uh-oh' < foo.txt 
 ```
 
+Coment on an issue,
+
+```
+jql comment NFT-123 -m "do I not like this"
+```
+
 Open an issue (in your web browser),
 
 ```
