@@ -39,7 +39,7 @@ jql create --project NFT --important --summary 'Something broke'
 Create a new issues with a description from stdin,
 
 ```
-jql create -p NFT --s 'Uh-oh' < foo.txt 
+jql create -p NFT -s 'Uh-oh' < foo.txt 
 ```
 
 Open an issue (in your web browser),
@@ -47,6 +47,24 @@ Open an issue (in your web browser),
 ```
 jql show NFT-123
 ```
+
+Obviously this integrates nicely with all the other shell tools,
+
+Eg, Everything that's assigned to **me**,
+
+`alias me='jql ls -q "assignee = currentUser()"'`
+
+Eg, Top ten issues, 
+
+`jql ls -p NFT --priority | head -n 10`
+
+Eg, Everything marked critical created this week,
+
+`alias p1='jql ls -q "priority = Critical AND createdDate > startOfWeek()"'`
+
+Eg, Create a issue for every error in your logs ;) 
+
+`tail -f logs | grep 'error' | xargs -I % jql create -p NFT -s %`
 
 ## to-do
 
